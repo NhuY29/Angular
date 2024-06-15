@@ -1,0 +1,70 @@
+.actions {
+    display: flex; 
+    align-items: center;
+    gap: 10px; 
+  }
+  
+  .edit-icon, .delete-icon {
+    cursor: pointer; 
+    font-size: 24px; 
+    color: #000; 
+    transition: color 0.3s; 
+  }
+  
+  .edit-icon:hover, .delete-icon:hover {
+    color: #ff0000; 
+  }
+  /* body.component.css */
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-field button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-field button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.form-field button[type="button"] {
+  background-color: #ccc;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-field button[type="button"]:hover {
+  background-color: #999;
+}

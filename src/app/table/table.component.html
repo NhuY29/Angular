@@ -1,0 +1,36 @@
+<div class="form-container">
+    <form #productForm="ngForm" (ngSubmit)="submitForm(productForm)">
+      <div class="form-field">
+        <label for="productId">Product ID</label>
+        <input type="text" id="productId" name="productId" required ngModel #id="ngModel">
+      </div>
+  
+      <div class="form-field">
+        <label for="productName">Product Name</label>
+        <input type="text" id="productName" name="productName" required ngModel #name="ngModel">
+      </div>
+  
+      <div class="form-field">
+        <label for="productPrice">Price</label>
+        <input type="number" id="productPrice" name="productPrice" step="0.01" required ngModel #price="ngModel">
+      </div>
+  
+      <div class="form-field">
+        <label for="productDescription">Description</label>
+        <textarea id="productDescription" name="productDescription" required ngModel #description="ngModel"></textarea>
+      </div>
+  
+      <div class="form-field">
+        <label for="productValue">Value</label>
+        <input type="number" id="productValue" name="productValue" required ngModel #value="ngModel">
+      </div>
+  
+      <div class="form-field">
+        <label for="productImg">Image URL</label>
+        <input type="url" id="productImg" name="productImg" required ngModel #img="ngModel">
+      </div>
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

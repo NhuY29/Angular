@@ -1,0 +1,68 @@
+<section class="container">
+  <ul class="products">
+    <li class="row" *ngFor="let item of list">
+      <div class="col left">
+        <div class="thumbnail">
+          <a href="#">
+            <img src="{{item.img}}" alt="" />
+          </a>
+        </div>
+        <div class="detail">
+          <div class="name"><a href="#">{{item.name}}</a></div>
+          <div class="description">
+            {{item.description}}
+          </div>
+          <div class="price">${{item.price}}</div>
+        </div>
+      </div>
+
+      <div class="col right">
+        <div class="quantity">
+          <input type="number" class="quantity" step="1" [value]="item.value" (input)="updateValue(item.id, $event)" />
+        </div>
+
+        <div class="actions">
+          <mat-icon class="delete-icon" (click)="removeProduct(item.id)">delete</mat-icon>
+          <mat-icon class="delete-icon" (click)="EditProduct(item.id)">edit</mat-icon>
+        </div>
+
+      </div>
+    </li>
+  </ul>
+  <div class="form-container">
+    <form #productForm="ngForm" (ngSubmit)="submitForm()" *ngIf="Visible">
+      <div class="form-field">
+        <label for="productId">Product ID</label>
+        <input type="text" id="productId" name="productId" required [(ngModel)]="productId">
+      </div>
+  
+      <div class="form-field">
+        <label for="productName">Product Name</label>
+        <input type="text" id="productName" name="productName" required [(ngModel)]="productName">
+      </div>
+  
+      <div class="form-field">
+        <label for="productPrice">Price</label>
+        <input type="number" id="productPrice" name="productPrice" step="0.01" required [(ngModel)]="productPrice">
+      </div>
+  
+      <div class="form-field">
+        <label for="productDescription">Description</label>
+        <textarea id="productDescription" name="productDescription" required [(ngModel)]="productDescription"></textarea>
+      </div>
+  
+      <div class="form-field">
+        <label for="productValue">Value</label>
+        <input type="number" id="productValue" name="productValue" required [(ngModel)]="productValue">
+      </div>
+  
+      <div class="form-field">
+        <label for="productImg">Image URL</label>
+        <input type="url" id="productImg" name="productImg" required [(ngModel)]="productImg">
+      </div>
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+</section>

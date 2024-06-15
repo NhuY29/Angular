@@ -1,0 +1,15 @@
+<main>
+  <app-table #id #name #price #description #value #img (productForm)="submitForm($event)"></app-table>
+  <div class="search-container">
+    <input type="text" placeholder="Tìm kiếm..." #search>
+    <button type="submit" (click)="searchProduct(search.value)"><i class="fa fa-search"></i></button>
+  </div>  
+  <app-header [numberItems]="numberItems"></app-header>
+  <app-body [list]="list" (onRemoveProduct)="removeProduct($event)" (updateProductQuantity)="updateProductQuantity($event)"></app-body>
+  <section class="container">
+   <app-code #promoCodeInput  (OnClick)="getCode($event)"></app-code>
+  <app-sumary [fee]="fee" [total]="total" [subtotal]="subtotal" [discount]="discount"></app-sumary>
+
+
+  </section>
+</main>
